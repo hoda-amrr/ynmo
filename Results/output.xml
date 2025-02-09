@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-22T13:27:22.233694" rpa="false" schemaversion="5">
+<suite id="s1" name="Add-Family-Cases" source="D:\TrianglZ\Automation\ynmo\tests\add-family-cases.robot">
+<kw name="login with valid data" owner="login" type="SETUP">
+<kw name="Go to landing page" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:27:22.795863" level="INFO">Opening browser 'chrome' to base url 'https://test-app-revamp.ynmodata.com/auth/login'.</msg>
+<arg>${browsing-data}[url]</arg>
+<arg>${browsing-data}[browser]</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-22T13:27:22.795513" elapsed="3.999008"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-22T13:27:26.794836" elapsed="0.074021"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-22T13:27:36.870377" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-22T13:27:26.869071" elapsed="10.001584"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:27:22.794235" elapsed="14.076668"/>
+</kw>
+<kw name="verify &quot;login&quot; page is loaded" owner="login-page">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${username_login_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-22T13:27:36.872836" elapsed="0.063454"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:27:36.871192" elapsed="0.065231"/>
+</kw>
+<kw name="Enter Username and Password" owner="login-page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:27:36.937389" level="INFO">Typing text 'mona.abdelrahim+cent10@trianglz.com' into text field 'id=login-username'.</msg>
+<arg>${username_login_field}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:27:36.937122" elapsed="0.379947"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:27:37.317968" level="INFO">Typing text 'P@ssw0rd' into text field 'id=login-password'.</msg>
+<arg>${password_login_field}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:27:37.317478" elapsed="0.214042"/>
+</kw>
+<arg>${user_data}[email]</arg>
+<arg>${user_data}[password]</arg>
+<status status="PASS" start="2025-01-22T13:27:36.936683" elapsed="0.595006"/>
+</kw>
+<kw name="Submit Login Form" owner="login-page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:27:37.532669" level="INFO">Clicking button 'id=login_btn'.</msg>
+<arg>${login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:27:37.532346" elapsed="0.202378"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:27:37.531964" elapsed="0.202948"/>
+</kw>
+<kw name="Verify &quot;home&quot; page is loaded" owner="login-page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-22T13:27:57.737817" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-22T13:27:37.735548" elapsed="20.002582"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${my_beneficiaries_title}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-22T13:27:57.738455" elapsed="0.023914"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:27:37.735253" elapsed="20.027331"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:27:22.793828" elapsed="34.968850"/>
+</kw>
+<test id="s1-t1" name="Add new family with required data [auto generated password]" line="18">
+<kw name="Click &quot;family&quot; from side menu" owner="common">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:27:57.765848" level="INFO">Clicking element 'xpath=//li/a/span[@class='yn-icon__family-side-menu']'.</msg>
+<arg>${family_side_menu_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:27:57.764312" elapsed="0.134174"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${add_new_family_btn}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-22T13:27:57.898730" elapsed="0.627506"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:27:57.763919" elapsed="0.762507"/>
+</kw>
+<kw name="Go to &quot;Add Family&quot; page" owner="family-page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:27:58.527875" level="INFO">Clicking button 'xpath=//div/yn-button/button[@id='families-header-action-button']'.</msg>
+<arg>${add_new_family_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:27:58.527575" elapsed="0.218829"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${new_family_page_title}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-22T13:27:58.746695" elapsed="0.019280"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-22T13:28:08.767406" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-22T13:27:58.766322" elapsed="10.001393"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:27:58.527154" elapsed="10.240767"/>
+</kw>
+<kw name="Enter required data in &quot;add new family&quot; form" owner="family-page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:08.770370" level="INFO">Typing text 'Hoda' into text field 'id=save-family-firstName'.</msg>
+<arg>${first_name_field}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:08.769495" elapsed="0.293700"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:09.063791" level="INFO">Typing text 'Amr' into text field 'id=save-family-lastName'.</msg>
+<arg>${last_name_field}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:09.063450" elapsed="0.259478"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:09.323601" level="INFO">Typing text 'hoda.amr@trianglz.com' into text field 'id=save-family-email'.</msg>
+<arg>${email_field}</arg>
+<arg>${email_family}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:09.323211" elapsed="0.293221"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:09.617068" level="INFO">Typing text 'hoda123' into text field 'id=save-family-username'.</msg>
+<arg>${username_field}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:09.616685" elapsed="0.187791"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-22T13:28:14.807175" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-22T13:28:09.804843" elapsed="5.002917"/>
+</kw>
+<arg>${family-data}[first_name]</arg>
+<arg>${family-data}[last_name]</arg>
+<arg>${family-data}[email]</arg>
+<arg>${family-data}[username]</arg>
+<status status="PASS" start="2025-01-22T13:28:08.768755" elapsed="6.039223"/>
+</kw>
+<kw name="Submit &quot;New Family&quot;" owner="family-page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:14.811715" level="INFO">Clicking button 'id=save-family-save-and-add-new'.</msg>
+<arg>${save_add_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:14.811396" elapsed="0.238345"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:28:14.810054" elapsed="0.239946"/>
+</kw>
+<doc>TC_1</doc>
+<status status="PASS" start="2025-01-22T13:27:57.762818" elapsed="17.289231"/>
+</test>
+<test id="s1-t2" name="Add new family with all fields [manual password]" line="25">
+<kw name="Click &quot;family&quot; from side menu" owner="common">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:15.070170" level="INFO">Clicking element 'xpath=//li/a/span[@class='yn-icon__family-side-menu']'.</msg>
+<arg>${family_side_menu_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:15.064027" elapsed="0.294879"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${add_new_family_btn}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-22T13:28:15.359211" elapsed="0.014191"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:28:15.063510" elapsed="0.310041"/>
+</kw>
+<kw name="Go to &quot;Add Family&quot; page" owner="family-page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:15.375387" level="INFO">Clicking button 'xpath=//div/yn-button/button[@id='families-header-action-button']'.</msg>
+<arg>${add_new_family_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:15.375090" elapsed="0.275513"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${new_family_page_title}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-22T13:28:15.651421" elapsed="0.060988"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-22T13:28:25.713404" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-22T13:28:15.712660" elapsed="10.000930"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:28:15.374013" elapsed="10.339775"/>
+</kw>
+<kw name="Enter required data in &quot;add new family&quot; form" owner="family-page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:25.716664" level="INFO">Typing text 'Hoda' into text field 'id=save-family-firstName'.</msg>
+<arg>${first_name_field}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:25.716090" elapsed="0.264054"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:25.980940" level="INFO">Typing text 'Amr' into text field 'id=save-family-lastName'.</msg>
+<arg>${last_name_field}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:25.980470" elapsed="0.249325"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:26.230404" level="INFO">Typing text 'hoda.amr@trianglz.com' into text field 'id=save-family-email'.</msg>
+<arg>${email_field}</arg>
+<arg>${email_family}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:26.230054" elapsed="0.350656"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:26.581553" level="INFO">Typing text 'hoda123' into text field 'id=save-family-username'.</msg>
+<arg>${username_field}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:26.581038" elapsed="0.248688"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-22T13:28:31.831283" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-22T13:28:26.830172" elapsed="5.001274"/>
+</kw>
+<arg>${family-data}[first_name]</arg>
+<arg>${family-data}[last_name]</arg>
+<arg>${family-data}[email]</arg>
+<arg>${family-data}[username]</arg>
+<status status="PASS" start="2025-01-22T13:28:25.715305" elapsed="6.116275"/>
+</kw>
+<kw name="Enter optional data in &quot;add new family&quot; form" owner="family-page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:31.832816" level="INFO">Typing text '01112413768' into text field 'id=save-family-mobile'.</msg>
+<arg>${phone_number_field}</arg>
+<arg>${phone_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:31.832542" elapsed="0.240202"/>
+</kw>
+<kw name="Select &quot;Link Beneficiaries&quot; from drop down list" owner="family-page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:32.075306" level="INFO">Clicking element 'xpath=//div/span[@class='c-arrow__icon yn-icon__chevron-bottom text-white text-vtiny h-30 w-30 flex-center']'.</msg>
+<arg>${down_arrow_drop_down_list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:32.073810" elapsed="0.194220"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:32.268608" level="INFO">Clicking element 'xpath=//nz-option-item[@title='Hoda 01']'.</msg>
+<arg>${click_item_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:32.268322" elapsed="0.251767"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:28:32.073114" elapsed="0.447121"/>
+</kw>
+<arg>${family-data}[phone_number]</arg>
+<status status="PASS" start="2025-01-22T13:28:31.832142" elapsed="0.688163"/>
+</kw>
+<kw name="Upload image" owner="family-page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:32.522042" level="INFO">Clicking element 'id=save-family-image-uploader-upload-image'.</msg>
+<arg>${img_uploader_field}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:32.521674" elapsed="0.224860"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:32.747228" level="INFO">Sending D:\TrianglZ\Automation\family.jpg to browser.</msg>
+<arg>xpath=//input[@type='file']</arg>
+<arg>${image_path}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:32.746785" elapsed="0.113535"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-22T13:28:37.861744" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-22T13:28:32.860560" elapsed="5.001505"/>
+</kw>
+<arg>${image_path}</arg>
+<status status="PASS" start="2025-01-22T13:28:32.520988" elapsed="5.341300"/>
+</kw>
+<kw name="clearing auto generated password and enter new password" owner="family-page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:37.866903" level="INFO">Clicking button 'xpath=//div/nz-switch/button[@id='save-family-toggle-auto-generated-password']'.</msg>
+<arg>${password_toggle}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:37.866268" elapsed="0.227281"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${password_field}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:38.095169" elapsed="0.153949"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:38.249800" level="INFO">Typing text 'Ynmo@123' into text field 'id=save-family-password'.</msg>
+<arg>${password_field}</arg>
+<arg>${password_family}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:38.249399" elapsed="0.318150"/>
+</kw>
+<arg>${family-data}[password]</arg>
+<status status="PASS" start="2025-01-22T13:28:37.863439" elapsed="0.704330"/>
+</kw>
+<kw name="Submit &quot;New Family&quot;" owner="family-page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-22T13:28:38.575905" level="INFO">Clicking button 'id=save-family-save-and-add-new'.</msg>
+<arg>${save_add_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-22T13:28:38.575615" elapsed="0.219774"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:28:38.575230" elapsed="0.220378"/>
+</kw>
+<doc>TC_2</doc>
+<status status="PASS" start="2025-01-22T13:28:15.062486" elapsed="23.735722"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-22T13:28:38.803621" elapsed="2.513434"/>
+</kw>
+<status status="PASS" start="2025-01-22T13:27:22.236855" elapsed="79.080371"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Add-Family-Cases" id="s1" pass="2" fail="0" skip="0">Add-Family-Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
