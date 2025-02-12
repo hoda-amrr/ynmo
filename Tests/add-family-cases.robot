@@ -15,20 +15,30 @@ ${image_path}           D:/TrianglZ/Automation/family.jpg
 
 
 *** Test Cases ***
-Add new family with required data [auto generated password]
-    [Documentation]    TC_1
-    common.Click "family" from side menu
-    family-page.Go to "Add Family" page
-    family-page.enter required data in "add new family" form    ${family-data}[first_name]      ${family-data}[last_name]   ${family-data}[email]   ${family-data}[username]
-    family-page.submit "new family"
+#Add new family with required data [auto generated password]
+#    [Documentation]    TC_1
+#    common.Click "family" from side menu
+#    family-page.Go to "Add Family" page
+#    family-page.enter required data in "add new family" form    ${family-data}[first_name]      ${family-data}[last_name]   ${family-data}[email]   ${family-data}[username]
+#    family-page.submit "new family"
+#
+#Add new family with all fields [manual password]
+#    [Documentation]    TC_2
+#    common.Click "family" from side menu
+#    family-page.Go to "Add Family" page
+#    family-page.enter required data in "add new family" form    ${family-data}[first_name]      ${family-data}[last_name]   ${family-data}[email]   ${family-data}[username]
+#    family-page.Enter optional data in "add new family" form    ${family-data}[phone_number]
+#    family-page.Upload image                                    ${image_path}
+#    family-page.clearing auto generated password and enter new password     ${family-data}[password]
+#    family-page.submit "new family"
 
-Add new family with all fields [manual password]
-    [Documentation]    TC_2
+
+Add new family by selecting multiple beneficiaries
+    [Tags]        TC_3
     common.Click "family" from side menu
     family-page.Go to "Add Family" page
     family-page.enter required data in "add new family" form    ${family-data}[first_name]      ${family-data}[last_name]   ${family-data}[email]   ${family-data}[username]
     family-page.Enter optional data in "add new family" form    ${family-data}[phone_number]
-    family-page.Upload image                                    ${image_path}
-    family-page.clearing auto generated password and enter new password     ${family-data}[password]
+    family-page.Select multiple "Beneficiaries" from drop down list
     family-page.submit "new family"
 
