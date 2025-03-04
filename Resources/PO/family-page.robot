@@ -28,22 +28,22 @@ Go to "Add Family" page
     sleep                               10s
 
 Enter required data in "add new family" form
-    [Arguments]         ${first_name}       ${last_name}        ${email_family}      ${username}
-    input text          ${first_name_field}                 ${first_name}
-    input text          ${last_name_field}                  ${last_name}
-    input text          ${email_field}                      ${email_family}
-    input text          ${username_field}                   ${username}
+    [Arguments]         ${family_data.first_name}       ${family_data.last_name}        ${family_data.email}        ${family_data.username}
+    input text          ${first_name_field}                 ${family_data.first_name}
+    input text          ${last_name_field}                  ${family_data.last_name}
+    input text          ${email_field}                      ${family_data.email}
+    input text          ${username_field}                   ${family_data.username}
     sleep               5s
 
 Enter optional data in "add new family" form
-    [Arguments]     ${phone_number}
-    input text      ${phone_number_field}   ${phone_number}
+    [Arguments]     ${family_data.phone_number}
+    input text      ${phone_number_field}   ${family_data.phone_number}
     select "link beneficiaries" from drop down list
 
 Upload image
-    [Arguments]         ${image_path}
+    [Arguments]         ${family_data.img_path}
     click element       ${img_uploader_field}
-    choose file         xpath=//input[@type='file']  ${image_path}
+    choose file         xpath=//input[@type='file']  ${family_data.img_path}
     sleep               5s
 
 Select "Link Beneficiaries" from drop down list
@@ -59,10 +59,10 @@ Select multiple "Beneficiaries" from drop down list
 
 
 clearing auto generated password and enter new password
-    [Arguments]             ${password_family}
+    [Arguments]             ${family_data.password}
     click button            ${password_toggle}
     clear element text      ${password_field}
-    input text              ${password_field}   ${password_family}
+    input text              ${password_field}   ${family_data.password}
 
 Submit "New Family"
     click button        ${save_add_btn}
