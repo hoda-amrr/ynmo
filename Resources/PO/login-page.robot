@@ -14,9 +14,9 @@ verify "login" page is loaded
     wait until page contains element    ${username_login_field}
 
 Enter Username and Password
-    [Arguments]        ${email}    ${password}
-    Input Text         ${username_login_field}    ${email}
-    Input Text         ${password_login_field}    ${password}
+    [Arguments]        ${user_data.email}         ${user_data.password}
+    Input Text         ${username_login_field}    ${user_data.email}
+    Input Text         ${password_login_field}    ${user_data.password}
 
 Submit Login Form
     Click Button       ${login_btn}
