@@ -15,13 +15,9 @@ login with valid data
     login-page.Verify "home" page is loaded
     #login-page.Accept "Notification" alert
 
-multiple invalid login
-    [Arguments]    ${credentials}
-    login with invalid data     ${credentials.email}      ${credentials.password}
-
-login with invalid data
-    [Arguments]    ${credentials.email}       ${credentials.password}
-    login-page.Enter Username and Password    ${credentials.email}    ${credentials.password}
+Login with invalid data
+    [Arguments]    ${email}       ${password}
+    login-page.Enter Username and Password    ${email}    ${password}
     login-page.Submit Login Form
     login-page.verify "login" page is loaded
     sleep    3s

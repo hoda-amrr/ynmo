@@ -1,9 +1,9 @@
 *** Settings ***
 Library           SeleniumLibrary
-Resource           ../Resources/login.robot
+Resource           ../Resources/Login.robot
 Resource           ../Resources/common.robot
 Resource           ../Resources/PO/beneficiary-page.robot
-Suite Setup        login.login with valid data
+Suite Setup        Login.login with valid data
 Suite Teardown     Close browser
 
 # robot -d results tests/add-beneficiary-cases.robot
